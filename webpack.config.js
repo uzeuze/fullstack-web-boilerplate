@@ -4,6 +4,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: [
+    'babel-polyfill',
     './client/index.js'
   ],
   output: {

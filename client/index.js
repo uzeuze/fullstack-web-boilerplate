@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import api from './utils/api';
 
 import './index.css';
 
 class App extends Component {
+
+  async componentDidMount() {
+    const message = await api.getHelloMessage();
+    console.log(message);
+  }
+
   render() {
     return (
       <div>
