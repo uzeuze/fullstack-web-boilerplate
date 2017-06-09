@@ -7,8 +7,8 @@ const app = express();
 app.use(cors());
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
-app.get('/hello', (req, res) => {
-  res.json({ message: "hello node" });
+app.get('/api/hello', (req, res) => {
+  res.json({ message: "hello" });
 });
 
 app.get('*', (req, res) => {

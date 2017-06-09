@@ -23,7 +23,10 @@ module.exports = {
     ]
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: {
+    "/api": "http://127.0.0.1:4000",
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
