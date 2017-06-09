@@ -2,14 +2,18 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
+const VENDOR_LIBS = [
+  'axios', 'react', 'react-dom'
+];
+
 module.exports = {
-  entry: [
-    'babel-polyfill',
-    './client/index.js'
-  ],
+  entry: {
+    bundle: ['babel-polyfill', './client/index.js'],
+    vendor: VENDOR_LIBS
+  },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: '[name].[chunkhash].js',
     publicPath: '/'
   },
   module: {
@@ -31,6 +35,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'client/index.html'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor']
     })
   ]
 };
