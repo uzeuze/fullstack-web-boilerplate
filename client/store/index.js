@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import reduxThunk from 'redux-thunk';
-import reducers from '../reducers/index';
+import reducers from '../reducers';
 
 const logger = createLogger({
     predicate: () => process.env.NODE_ENV !== 'production'

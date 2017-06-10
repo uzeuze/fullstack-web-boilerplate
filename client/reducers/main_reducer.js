@@ -1,11 +1,15 @@
+import {
+  TOGGLE_STATUS
+} from '../actions/types';
+
 const INITIAL_STATE = {
-  test: false
+  status: false
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'TEST_ACTION':
-      return { ...state, test: !state.test };
+    case TOGGLE_STATUS:
+      return { ...state, status: !state.status };
     default:
       return state;
   }

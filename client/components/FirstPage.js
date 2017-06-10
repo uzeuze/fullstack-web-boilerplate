@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import api from '../utils/api';
 
-import { testAction } from '../actions';
+import { toggleStatus } from '../actions';
 
 class FirstPage extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class FirstPage extends Component {
     return (
       <div>
         <h1>FirstPage</h1>
-        <button onClick={() => this.props.testAction()}>TOGGLE</button>
+        <button onClick={() => this.props.toggleStatus()}>TOGGLE</button>
         <h6>STATUS: {this.state.status ? 'ON' : 'OFF'}</h6>
       </div>
     );
@@ -33,7 +33,7 @@ class FirstPage extends Component {
 }
 
 const mapStateToProps = state => ({
-  status: state.main.test
+  status: state.main.status
 })
 
-export default connect(mapStateToProps, { testAction })(FirstPage);
+export default connect(mapStateToProps, { toggleStatus })(FirstPage);
