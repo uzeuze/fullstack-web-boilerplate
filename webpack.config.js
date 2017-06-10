@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const VENDOR_LIBS = [
   'axios', 'react', 'react-dom'
@@ -23,7 +24,13 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/
       },
-      { test: /\.css$/, loaders: ['style-loader', 'css-loader'] }
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
+      }
     ]
   },
   devServer: {
@@ -33,6 +40,7 @@ module.exports = {
     }
   },
   plugins: [
+    new ExtractTextPlugin("[name].[contenthash].css"),
     new HtmlWebpackPlugin({
       template: 'client/index.html'
     }),
