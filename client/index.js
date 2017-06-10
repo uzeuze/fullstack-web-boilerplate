@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import api from './utils/api';
 
-import './index.css';
+import './index.scss';
 
 class App extends Component {
 
