@@ -7,7 +7,7 @@ const VENDOR_LIBS = [
   'axios', 'react', 'react-dom'
 ];
 
-module.exports = {
+const config = {
   entry: {
     bundle: ['babel-polyfill', './client/index.js'],
     vendor: VENDOR_LIBS
@@ -49,3 +49,15 @@ module.exports = {
     })
   ]
 };
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }
+    })
+  )
+}
+
+module.exports = config;
