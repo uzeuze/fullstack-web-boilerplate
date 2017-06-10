@@ -4,7 +4,9 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const VENDOR_LIBS = [
-  'axios', 'react', 'react-dom'
+  'axios', 'react', 'react-dom', 'react-redux',
+  'react-router-dom', 'redux', 'redux-thunk',
+  'react-bootstrap'
 ];
 
 const config = {

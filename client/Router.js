@@ -10,7 +10,7 @@ class Router extends Component {
       <BrowserRouter>
         <div>
           <nav>
-            <ul className='nav'>
+            <ul>
               <li>
                 <NavLink exact activeClassName='active' to='/'>First Page</NavLink>
               </li>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import api from '../utils/api';
 
 import { toggleStatus } from '../actions';
@@ -23,9 +24,9 @@ class FirstPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>FirstPage</h1>
-        <button onClick={() => this.props.toggleStatus()}>TOGGLE</button>
+        <Button bsStyle="success" onClick={() => this.props.toggleStatus()}>TOGGLE</Button>
         <h6>STATUS: {this.state.status ? 'ON' : 'OFF'}</h6>
       </div>
     );
