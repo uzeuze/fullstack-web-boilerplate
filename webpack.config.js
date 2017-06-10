@@ -38,7 +38,7 @@ const config = {
   devServer: {
     historyApiFallback: true,
     proxy: {
-    "/api": "http://127.0.0.1:4000",
+      "/api": "http://127.0.0.1:4000",
     }
   },
   plugins: [
