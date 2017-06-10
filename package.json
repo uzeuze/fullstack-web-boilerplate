@@ -4,9 +4,10 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
+    "start": "node ./server/index.js",
     "clean": "rimraf build",
     "start-dev": "nodemon ./server/index.js",
-    "client-dev": "webpack-dev-server --progress",
+    "client-dev": "webpack-dev-server --progress --open",
     "build": "npm run clean && webpack -p"
   },
   "author": "Egemen Can Uze",
@@ -16,7 +17,8 @@
     "cors": "^2.8.3",
     "express": "^4.15.3",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
